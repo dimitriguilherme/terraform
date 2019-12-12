@@ -19,5 +19,8 @@ resource "aws_s3_bucket" "b" {
 resource "aws_s3_bucket_object" "object" {
   bucket = "${aws_s3_bucket.b.id}"
   key    = "oioioi.txt"
+  #s
   source = "arquivo.txt"
 }
+
+#a
