@@ -14,8 +14,10 @@ resource "aws_s3_bucket" "b" {
     Environment = "Dev444"
   }
 }
+
+#interpolacao
 resource "aws_s3_bucket_object" "object" {
   bucket = "${aws_s3_bucket.b.id}"
-  key = "oioioi.txt"
+  key    = "oioioi.txt"
   source = "arquivo.txt"
 }
