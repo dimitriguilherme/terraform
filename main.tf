@@ -6,21 +6,21 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "my-tf-test-bucket129vc"
+  bucket = "my-tf-test-bucket1"
   acl    = "private"
 
   tags = {
-    Name        = "My bucket12344"
-    Environment = "Dev444"
+    Name        = "My bucket1"
+    Environment = "Dev1"
   }
 }
 
-#interpolacao
+#interpolacao_t
 resource "aws_s3_bucket_object" "object" {
   bucket = "${aws_s3_bucket.b.id}"
-  key    = "oioioi.txt"
-  #s
+  key    = "arquivoS3.txt"
   source = "arquivo.txt"
 }
 
-#a
+#others
+
