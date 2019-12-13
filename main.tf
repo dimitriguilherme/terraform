@@ -6,11 +6,11 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "my-tf-test-bucket1"
+  bucket = "my-tf-test-bucket19343"
   acl    = "private"
 
   tags = {
-    Name        = "My bucket1"
+    Name        = "My bucket13434"
     Environment = "Dev1"
   }
 }
@@ -20,7 +20,14 @@ resource "aws_s3_bucket_object" "object" {
   bucket = "${aws_s3_bucket.b.id}"
   key    = "arquivoS3.txt"
   source = "arquivo.txt"
+  etag = "${md5(file("arquivo.txt"))}"
 }
 
-#others
+output "bucket" {
+  value = "${aws_s3_bucket.b.id}"
+}
+
+output "etag"{ 
+  value = "${aws_s3_bucket_object.object.etag}"
+}
 
