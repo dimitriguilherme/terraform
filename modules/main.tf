@@ -1,3 +1,4 @@
+#m-f
 provider "aws" {
   region                  = "${var.region}"
   #shared_credentials_file = ".aws/credentials"
@@ -5,13 +6,14 @@ provider "aws" {
   profile                 = "${var.prof}"
 }
 
-resource "aws_instance" "web" {
-  ami = "${var.ami}"
-  instance_type = "${var.type}"
-  #ipv6_addresses = "${var.ips}"
-  tags = "${var.tags}"
+resource "random_id" "bucket" {
+  byte_length =8
 }
 
+module "bucket" {
+  source = "./s3"
+  name = "mybucket-${random_id.bucket.hex}"
+}
 
 
 

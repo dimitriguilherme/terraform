@@ -5,3 +5,8 @@
 
 
 #type = "t2.micro"
+
+tags = {
+    Name = "Wordpress"
+    Env = "Production"
+}
