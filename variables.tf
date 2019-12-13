@@ -7,4 +7,9 @@ variable "cred" {
   default = ".aws/credentials"
 }
 
+variable "prof" {
+  default = "terra"
+}
+
+
 
