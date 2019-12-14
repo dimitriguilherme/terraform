@@ -1,4 +1,4 @@
-#m-f
+#module-f
 variable "region" {
   default = "us-east-1"
   description = "principal"
