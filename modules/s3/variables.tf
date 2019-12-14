@@ -1,6 +1,5 @@
 #s3-f
-variable "name" {
-  
+variable "name" {  
 }
 
 variable "acl" {
@@ -14,4 +13,17 @@ variable "versioning" {
 variable "tags" {
   type    = "map"
   default = {}
+}
+
+
+variable "object_key" {
+  default = ""
+}
+
+variable "object_source" {
+  default = ""
+}
+
+variable "create_object" {
+  default = false
 }
